@@ -33,3 +33,11 @@ The following packages were removed:
   com.unity.ide.vscode@1.0.4
   com.unity.test-framework@1.0.12
   com.unity.modules.androidjni@1.0.0
+
+=== Sat Jun  8 07:41:35 2019
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.textmeshpro from version 2.0.0 to 2.0.1

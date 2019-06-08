@@ -12,15 +12,16 @@ public class PlayerController : MonoBehaviour{
 
     public float movementSpeed;
 
-    //public Transform movementAnchors;
     public Transform anchorCenter;
     public Transform anchorUp;
     public Transform anchorRight;
     public Transform anchorDown;
     public Transform anchorLeft;
 
+    //Movement variables
     private Transform currentAnchor;
     private string currentAnchorIdentifier;
+    private bool moveInProgress = false;
 
     Rigidbody rb;
 
@@ -31,40 +32,48 @@ public class PlayerController : MonoBehaviour{
     }
 
     void Update(){
-        movement();
+        handleInput();
     }
 
-    private void movement(){
-        if (Input.GetKeyDown("w")){
-            Transform toAnchor = checkIfValidMove("up");
-            if (toAnchor != null){
-                currentAnchor = toAnchor;
-                transform.position = currentAnchor.position;
-                // transform.position = Vector3.Lerp(transform.position, currentAnchor.position, movementSpeed * Time.deltaTime);
-            }
+    private void handleInput(){
+        if (Input.GetKeyDown("w") || moveInProgress){
+            p("IN 1");
+            movement("up");
         }
-        else if (Input.GetKeyDown("a")){
-            Transform toAnchor = checkIfValidMove("left");
-            if (toAnchor != null){
-                currentAnchor = toAnchor;
-                transform.position = currentAnchor.position;
-            }
+        else if (Input.GetKeyDown("a") || moveInProgress){
+            p("IN 2");
+            movement("left");
         }
-        else if (Input.GetKeyDown("s")){
-            Transform toAnchor = checkIfValidMove("down");
-            if (toAnchor != null){
-                currentAnchor = toAnchor;
-                transform.position = currentAnchor.position;
-            }
+        else if (Input.GetKeyDown("s") || moveInProgress){
+            p("IN 3");
+            movement("down");
         }
-        else if (Input.GetKeyDown("d")){
-            Transform toAnchor = checkIfValidMove("right");
-            if (toAnchor != null){
+        else if (Input.GetKeyDown("d") || moveInProgress){
+            p("IN 4");
+            movement("right");
+        }
+
+    }
+
+    private void movement(string direction){
+        if (!moveInProgress){ //Only runs once when move initiated
+            Transform toAnchor = checkIfValidMove(direction);
+            if (toAnchor != null ){
                 currentAnchor = toAnchor;
-                transform.position = currentAnchor.position;
+                moveInProgress = true;
+                // transform.position = currentAnchor.position;
             }
         }
 
+        else { //Runs until player reaches new position
+            transform.position = Vector3.Lerp(transform.position, currentAnchor.position, movementSpeed * Time.deltaTime);
+            if (transform.position == currentAnchor.position){
+                moveInProgress = false;
+            }
+            else {
+                Debug.Log("Player pos: " + transform.position + " Anchor pos: " + currentAnchor.position);
+            }
+        }
     }
 
     private Transform checkIfValidMove(string direction){
