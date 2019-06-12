@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour{
 
         else { //Runs until player reaches new position
             transform.position = Vector3.Lerp(transform.position, currentAnchor.position, movementSpeed * Time.deltaTime);
-            if (transform.position == currentAnchor.position){
+            if (transform.position == currentAnchor.position ){
                 moveInProgress = false;
             }
             else {
