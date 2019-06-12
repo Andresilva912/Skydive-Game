@@ -9,7 +9,7 @@ public class Movement : MonoBehaviour
     float speedX;
     float speedY;
 
-   
+    // speed adjustment : the higher it is, the faster you go
     [SerializeField] float alt = 1;
 
     void Update()
@@ -18,8 +18,8 @@ public class Movement : MonoBehaviour
         float c = knob.c;
         if (Input.touchCount == 1 || Input.GetKey(KeyCode.Mouse0))
         {
-            speedX = -knob.x * alt / Screen.width ;
-            speedY = -knob.y * alt / Screen.height;
+            speedX = -knob.x / Screen.width * alt;
+            speedY = -knob.y / Screen.height * alt;
 
             //while inside the circle the speed is adjustable
             if (c < 175)
@@ -30,7 +30,7 @@ public class Movement : MonoBehaviour
             //while outside the circle the speed is not adjustable (velocity is)
             else
             {
-                transform.Translate(new Vector3(speedX, speedY).normalized * 0.13f / alt);
+                transform.Translate(new Vector3(speedX, speedY).normalized * 0.13f * alt);
             }
         }
     }
