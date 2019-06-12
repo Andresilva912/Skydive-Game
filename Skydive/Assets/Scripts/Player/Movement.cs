@@ -25,9 +25,9 @@ public class Movement : MonoBehaviour
             }
             else
             {
-                transform.Translate(new Vector3(speedX, speedY).normalized * 0.13f);
+                transform.Translate(new Vector3(speedX, speedY).normalized * 0.13f * alt);
             }
         }
-        Debug.Log(speedY / speedX);
+        //Debug.Log(speedY / speedX);
     }
 }

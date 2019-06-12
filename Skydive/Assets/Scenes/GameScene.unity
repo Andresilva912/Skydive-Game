@@ -931,7 +931,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knob: {fileID: 1722793314}
   player: {fileID: 0}
-  alt: 1
+  alt: 0.5
 --- !u!1 &1690314404
 GameObject:
   m_ObjectHideFlags: 0
