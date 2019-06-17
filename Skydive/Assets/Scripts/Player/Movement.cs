@@ -16,7 +16,7 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        //used to determine when the finger has left the presmises of the circle
+        //used to determine when the finger has left the perimeter of the circle
         float c = knob.c;
         if (Input.touchCount == 1 || Input.GetKey(KeyCode.Mouse0))
         {
