@@ -8,6 +8,7 @@ public class TrackMouse : MonoBehaviour
     //used to keep track of initial position of the knob to easily create an artifical origin for the mouse
     float startX;
     float startY;
+    public RectTransform knobBase;
     public float c;
     public float x;
     public float y;
@@ -40,11 +41,11 @@ public class TrackMouse : MonoBehaviour
             //follow mouse position
             transform.position = new Vector2(mousePosX, mousePosY);
 
-            //if the knob center exceeds 175 units from its center
-            if (c > 175)
+            //if the knob center exceeds half base width in units from its center
+            if (c > knobBase.sizeDelta.x / 2.7f)
             {
                 //restrict it to a certain perimeter
-                transform.position = new Vector2(x, y).normalized * -175;
+                transform.position = new Vector2(x, y).normalized * (-knobBase.sizeDelta.x / 2.7f);
                 transform.position += new Vector3(startX, startY);
             }
         }

@@ -8,6 +8,8 @@ public class Movement : MonoBehaviour
     public TrackMouse knob;
     float speedX;
     float speedY;
+    public RectTransform knobBase;
+
 
     // speed adjustment : the higher it is, the faster you go
     [SerializeField] float alt = 1;
@@ -22,7 +24,7 @@ public class Movement : MonoBehaviour
             speedY = -knob.y / Screen.height * alt;
 
             //while inside the circle the speed is adjustable
-            if (c < 175)
+            if (c < knobBase.sizeDelta.x / 2.7f)
             {
                 transform.Translate(new Vector3(speedX, speedY));
             }
