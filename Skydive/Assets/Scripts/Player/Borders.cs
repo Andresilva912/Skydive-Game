@@ -17,15 +17,15 @@ public class Borders : MonoBehaviour
         }
         if(transform.position.x <= left.position.x)
         {
-            transform.position = new Vector3(left.position.x, transform.position.y, transform.position.z);
+            transform.position = new Vector3(left.position.x, transform.position.y,  transform.position.z);
         }
         if(transform.position.y >= up.position.y)
         {
-            transform.position = new Vector3(transform.position.x,   up.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x,   up.position.y,  transform.position.z);
         }
         if(transform.position.y <= down.position.y)
         {
-            transform.position = new Vector3(transform.position.x, down.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x, down.position.y,  transform.position.z);
         }
     }
 }

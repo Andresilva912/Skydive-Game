@@ -21,7 +21,6 @@ public class TrackMouse : MonoBehaviour
 
     void Update()
     {
-
         //maps mouse pos to Canvas pos
         Vector2 mousePos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 
@@ -31,11 +30,9 @@ public class TrackMouse : MonoBehaviour
         x = startX - mousePosX;
         y = startY - mousePosY;
 
-        
-
         //used to track Knob distance from center in order to restrict it within a certain area
         c = Mathf.Sqrt((x * x) + (y * y));
-        //Debug.Log(c);
+
         if (Input.touchCount == 1 || Input.GetKey(KeyCode.Mouse0))
         {
             //follow mouse position

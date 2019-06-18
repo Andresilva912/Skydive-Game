@@ -12,8 +12,6 @@ public class LookAtMouse : MonoBehaviour
         //mouse pos to canvas pos
         Vector2 mousePos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 
-       
-
         //creates artifical origin in the objects center
         x = -transform.position.x + mousePos.x * Screen.width;
         y = -transform.position.y + mousePos.y * Screen.height;

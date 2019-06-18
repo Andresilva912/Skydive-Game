@@ -10,7 +10,6 @@ public class Movement : MonoBehaviour
     float speedY;
     public RectTransform knobBase;
 
-
     // speed adjustment : the higher it is, the faster you go
     [SerializeField] float alt = 1;
 
