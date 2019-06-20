@@ -9,8 +9,7 @@ public class Ttransparency : MonoBehaviour
     void Update()
     {
         Color alpha = this.GetComponent<MeshRenderer>().material.color;
-        //23 for test
-        //
+        
         if (transform.position.z < 10)
         {
             alpha.a -= 4 * Time.deltaTime;

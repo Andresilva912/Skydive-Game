@@ -896,7 +896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knob: {fileID: 1722793314}
   knobBase: {fileID: 2099983417}
-  alt: 0.5
+  alt: 1
 --- !u!114 &1516647891
 MonoBehaviour:
   m_ObjectHideFlags: 0

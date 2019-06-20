@@ -13,7 +13,7 @@ public class Movement : MonoBehaviour
     // speed adjustment : the higher it is, the faster you go
     [SerializeField] float alt = 1;
 
-    void Update()
+    void FixedUpdate()
     {
         //used to determine when the finger has left the perimeter of the circle
         float c = knob.c;
