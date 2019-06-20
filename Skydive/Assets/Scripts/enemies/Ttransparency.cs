@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Ttransparency : MonoBehaviour
 {
+    //once the cubes pass a certain location on the z axis, they will begin to fade into nothing
 
-    // Update is called once per frame
+    //Eventually, this will be rewritten and destoy will also be added to it
     void Update()
     {
         Color alpha = this.GetComponent<MeshRenderer>().material.color;

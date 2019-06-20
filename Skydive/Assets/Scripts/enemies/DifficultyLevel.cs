@@ -12,6 +12,7 @@ public class DifficultyLevel : MonoBehaviour
         StartCoroutine(DifInc());
      }
 
+    //increases number of spawns every 10 seconds unitl eight
     IEnumerator DifInc()
     {
         for (int i = 0; i < 8; i++)
@@ -19,6 +20,5 @@ public class DifficultyLevel : MonoBehaviour
             dif.numSpawn += 1;
             yield return new WaitForSeconds(10);
         }
-        
     }
 }

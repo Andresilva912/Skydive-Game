@@ -5,7 +5,9 @@ using UnityEngine;
 public class gridSpawn : MonoBehaviour
 {
     public GameObject cube;
+    //time in between cube spawns
     public float spawnTime;
+    //number of cubes spawning
     public int numSpawn;
 
     private void Start()
@@ -13,6 +15,7 @@ public class gridSpawn : MonoBehaviour
         StartCoroutine(Timer());
     }
 
+    //decides how often the cubes will be spawned
     IEnumerator Timer()
     {
        while(true)
@@ -22,11 +25,13 @@ public class gridSpawn : MonoBehaviour
         }
     }
 
+    //spawns a given number of cubes at different random locations 
     void RandomSpawn(int num)
     {
         int[] check  = new int[num];
         Vector3 placement = new Vector3(0, 0, 0);
-        //Debug.Log(check.Length);
+       
+        //assures that two cubes will never spawn at one single location
         for (int i = 0; i < num; i++)
         {
             int x = (int)Random.Range(1, 10);
@@ -42,6 +47,7 @@ public class gridSpawn : MonoBehaviour
 
             check[i] = x;
 
+            //different potential locations
             switch (x)
             {
                 case 1:

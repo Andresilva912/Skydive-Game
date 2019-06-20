@@ -9,6 +9,7 @@ public class Borders : MonoBehaviour
     public Transform left;
     public Transform right;
 
+    //manually stops the player from going past the border, because tranformation and collisions were not happy
     void Update()
     {
         if(transform.position.x >= right.position.x)
