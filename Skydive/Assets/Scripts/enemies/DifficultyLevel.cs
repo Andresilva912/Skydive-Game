@@ -9,10 +9,10 @@ public class DifficultyLevel : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(difInc());
+        StartCoroutine(DifInc());
      }
 
-    IEnumerator difInc()
+    IEnumerator DifInc()
     {
         for (int i = 0; i < 8; i++)
         {

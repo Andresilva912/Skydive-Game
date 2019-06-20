@@ -4,31 +4,21 @@ using UnityEngine;
 
 public class gridSpawn : MonoBehaviour
 {
-    public float time;
     public GameObject cube;
     public float spawnTime;
     public int numSpawn;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        if (Timer(spawnTime))
-        {
-            RandomSpawn(numSpawn); 
-        }
+        StartCoroutine(Timer());
     }
 
-    bool Timer (float setTime)
+    IEnumerator Timer()
     {
-        time += Time.deltaTime;
-        if ((int)time % setTime == 0 && (int)time != 0)
+       while(true)
         {
-            time = 0;
-            return true;
-        }
-        else
-        {
-            return false;
+            RandomSpawn(numSpawn);
+            yield return new WaitForSeconds(spawnTime);
         }
     }
 
