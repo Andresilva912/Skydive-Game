@@ -5,16 +5,23 @@ using UnityEngine;
 public class Ttransparency : MonoBehaviour
 {
     //once the cubes pass a certain location on the z axis, they will begin to fade into nothing
-
-    //Eventually, this will be rewritten and destoy will also be added to it
+    public bool doDie;
+    public float fadeRate;
     void Update()
     {
         Color alpha = this.GetComponent<MeshRenderer>().material.color;
         
         if (transform.position.z < 10)
         {
-            alpha.a -= 4 * Time.deltaTime;
+            alpha.a -= fadeRate * Time.deltaTime;
         }
         this.GetComponent<MeshRenderer>().material.color = alpha;
+
+        doDie = this.GetComponent<MeshRenderer>().material.color.a <= 0.01f;
+
+        if(doDie)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

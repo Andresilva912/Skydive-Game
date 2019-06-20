@@ -154,7 +154,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -4}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 480, y: 480}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &321964137
@@ -236,6 +236,7 @@ GameObject:
   - component: {fileID: 426048415}
   - component: {fileID: 426048414}
   - component: {fileID: 426048416}
+  - component: {fileID: 426048417}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -255,9 +256,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69984d4e39a3b4d4883cc4459f849667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 0
   cube: {fileID: 6382998995126093181, guid: d87059d856fdbc14f82c7aa995530db6, type: 3}
-  spawnTime: 2
+  spawnTime: 1
   numSpawn: 0
 --- !u!4 &426048415
 Transform:
@@ -280,9 +280,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 426048413}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e17bf34866b5fe409a553fc4708414b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dif: {fileID: 426048414}
+--- !u!114 &426048417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426048413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b697a911c9c9f5e46a18ae5290c65e1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dif: {fileID: 426048414}
@@ -577,7 +590,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0.38888884, b: 1, a: 0}
+  m_BackGroundColor: {r: 0.5849056, g: 0.09104664, b: 0.09104664, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -767,6 +780,26 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 327c8a0d276577047887792140c5c8f3, type: 2}
+    - target: {fileID: -1382962054099568191, guid: 85df5bf0a9a7a134b81ef7a3a09541f4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1611837848651398869, guid: 85df5bf0a9a7a134b81ef7a3a09541f4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2930965839983676710, guid: 85df5bf0a9a7a134b81ef7a3a09541f4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1869580673932284561, guid: 85df5bf0a9a7a134b81ef7a3a09541f4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -6057140222963153312, guid: 85df5bf0a9a7a134b81ef7a3a09541f4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 85df5bf0a9a7a134b81ef7a3a09541f4, type: 3}
@@ -896,7 +929,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knob: {fileID: 1722793314}
   knobBase: {fileID: 2099983417}
-  alt: 1
+  alt: 1.3
 --- !u!114 &1516647891
 MonoBehaviour:
   m_ObjectHideFlags: 0
